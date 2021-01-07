@@ -7,7 +7,7 @@ GIT_HASH := $(shell git log --format="%h" -n 1)
 LDFLAGS := -X main.release="develop" -X main.buildDate=$(shell date -u +%Y-%m-%dT%H:%M:%S) -X main.gitHash=$(GIT_HASH)
 
 build:
-	go build -v -o $(BIN) -ldflags "$(LDFLAGS)" ./cmd/calendar
+	go build -v -o $(BIN) -ldflags "$(LDFLAGS)" ./cmd
 
 run: build
 	$(BIN) -config ./configs/config.yml
@@ -34,7 +34,7 @@ lint: install-lint-deps
 	golangci-lint run ./...
 
 wire:
-	wire cmd/calendar/wire.go
+	wire cmd/wire.go
 
 mocks:
 	mockery --all --dir internal --output ./internal/mocks --case underscore
