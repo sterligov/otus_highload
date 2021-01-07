@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="98f0d969-e480-4418-bead-8120cd888f85" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="GOROOT" path="/usr/local/go" />
+  <component name="ProjectId" id="1mkWGV9kASYH72KOrs53Tn3NOiW" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/internal/gateway" />
+      <recent name="$PROJECT_DIR$/cmd" />
+      <recent name="$PROJECT_DIR$/migrations" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="98f0d969-e480-4418-bead-8120cd888f85" name="Default Changelist" comment="" />
+      <created>1610037973564</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1610037973564</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="791" y="390" width="400" height="334" key="#Go_Modules" timestamp="1610039967691">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="791" y="390" width="400" height="334" key="#Go_Modules/72.27.1848.1053@72.27.1848.1053" timestamp="1610039967691" />
+    <state x="591" y="215" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610039632041">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="591" y="215" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1610039632041" />
+    <state x="631" y="334" width="719" height="452" key="EditFileWatcherDialog" timestamp="1610039882502">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="631" y="334" width="719" height="452" key="EditFileWatcherDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1610039882502" />
+    <state x="485" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1610039883667">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="485" y="188" width="1022" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1610039883667" />
+    <state x="687" y="292" width="618" height="580" key="find.popup" timestamp="1610041423974">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="687" y="292" width="618" height="580" key="find.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1610041423974" />
+  </component>
+</project>
