@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="09ae58fb-f671-45da-9546-5c856c50b95d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/dating/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dating/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dating/build/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/dating/build/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dating/cmd/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/dating/cmd/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dating/cmd/wire.go" beforeDir="false" afterPath="$PROJECT_DIR$/dating/cmd/wire.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dating/configs/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/dating/configs/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dating/deployments/.env" beforeDir="false" afterPath="$PROJECT_DIR$/dating/deployments/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dating/deployments/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/dating/deployments/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dating/deployments/mysql/my.cnf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dating/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/dating/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dating/internal/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/dating/internal/config/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dating/internal/gateway/database.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dating/internal/server/http/handler.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dating/internal/server/http/middleware.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dating/migrations/20210107220332_create_city_table.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dating/migrations/20210107220338_create_country_table.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dating/migrations/20210107220346_create_user_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/dating/migrations/20210107220346_create_user_table.sql" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="GOROOT" path="/usr/local/go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
+  </component>
+  <component name="ProjectId" id="1n03WeLbqMJBGDIjtdSUE9ZosaN" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/dating" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="09ae58fb-f671-45da-9546-5c856c50b95d" name="Default Changelist" comment="" />
+      <created>1610513214115</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1610513214115</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="721" y="385" width="540" height="344" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1610513293026">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="721" y="385" width="540" height="344" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1610513293026" />
+  </component>
+</project>

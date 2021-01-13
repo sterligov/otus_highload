@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-  calendar-db:
+  dating-db:
     image: mysql:8.0
     restart: always
     environment:

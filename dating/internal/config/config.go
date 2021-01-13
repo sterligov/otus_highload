@@ -32,6 +32,10 @@ type Config struct {
 	} `yaml:"logger"`
 
 	StorageType string `yaml:"storage_type"`
+
+	JWT struct {
+		SecretKey []byte `yaml:"secret_key"`
+	}
 }
 
 func New(cfgFilename string) (*Config, error) {
