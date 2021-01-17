@@ -8,10 +8,11 @@ package main
 import (
 	"github.com/sterligov/otus_highload/dating/internal/config"
 	"github.com/sterligov/otus_highload/dating/internal/gateway/sql"
-	internalhttp "github.com/sterligov/otus_highload/dating/internal/server/http"
-	v1 "github.com/sterligov/otus_highload/dating/internal/server/http/handler/v1"
+	"github.com/sterligov/otus_highload/dating/internal/server/http"
+	"github.com/sterligov/otus_highload/dating/internal/server/http/handler/v1"
 	"github.com/sterligov/otus_highload/dating/internal/server/http/middleware"
 	"github.com/sterligov/otus_highload/dating/internal/usecase/auth"
+	"github.com/sterligov/otus_highload/dating/internal/usecase/city"
 	"github.com/sterligov/otus_highload/dating/internal/usecase/user"
 )
 
@@ -23,12 +24,14 @@ func setup(configConfig *config.Config) (*internalhttp.Server, func(), error) {
 		return nil, nil, err
 	}
 	userGateway := sql.NewUserGateway(db)
-	useCase := auth.NewAuthUseCase(userGateway)
-	authHandler := v1.NewAuthHandler(useCase)
-	userUseCase := user.NewUserUseCase(userGateway)
-	userHandler := v1.NewUserHandler(userUseCase)
-	ginJWTMiddleware := middleware.Auth(useCase)
-	handler := v1.NewHandler(authHandler, userHandler, ginJWTMiddleware)
+	useCase := user.NewUserUseCase(userGateway)
+	userHandler := v1.NewUserHandler(useCase)
+	cityGateway := sql.NewCityGateway(db)
+	cityUseCase := city.NewCityUseCase(cityGateway)
+	cityHandler := v1.NewCityHandler(cityUseCase)
+	authUseCase := auth.NewAuthUseCase(userGateway)
+	ginJWTMiddleware := middleware.Auth(configConfig, authUseCase)
+	handler := v1.NewHandler(userHandler, cityHandler, ginJWTMiddleware)
 	server, err := internalhttp.NewServer(configConfig, handler)
 	if err != nil {
 		return nil, nil, err

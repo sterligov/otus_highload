@@ -14,17 +14,17 @@ type (
 		Email     string
 		Password  string
 		Interests string
-		Sex       byte
-		CityID    int64
+		Sex       string
+		City      *City
 	}
 
 	UserGateway interface {
 		FindByID(ctx context.Context, id int64) (*User, error)
-		FindByEmailAndPassword(ctx context.Context, email, password string) (*User, error)
-		FindAfterID(ctx context.Context, id, limit int64) ([]*User, error)
-		Filter(ctx context.Context, user *User) ([]*User, error)
+		FindByEmail(ctx context.Context, email string) (*User, error)
+		FindAll(ctx context.Context) ([]*User, error)
+		FindFriends(ctx context.Context, userID int64) ([]*User, error)
 		Create(ctx context.Context, u *User) (int64, error)
-		//Delete(ctx context.Context, id int64) (int64, error)
-		//Update(ctx context.Context, u *User) (int64, error)
+		AddFriend(ctx context.Context, userID, friendID int64) (int64, error)
+		DeleteFriend(ctx context.Context, userID, friendID int64) (int64, error)
 	}
 )

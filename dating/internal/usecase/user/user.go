@@ -2,6 +2,9 @@ package user
 
 import (
 	"context"
+	"fmt"
+
+	"golang.org/x/crypto/bcrypt"
 
 	"go.uber.org/zap"
 
@@ -10,7 +13,8 @@ import (
 
 type UseCase struct {
 	userGateway domain.UserGateway
-	logger      *zap.Logger
+	//friendGateway domain.Fri
+	logger *zap.Logger
 }
 
 func NewUserUseCase(gateway domain.UserGateway) *UseCase {
@@ -21,52 +25,31 @@ func NewUserUseCase(gateway domain.UserGateway) *UseCase {
 }
 
 func (uc *UseCase) FindByID(ctx context.Context, id int64) (*domain.User, error) {
-	u, err := uc.userGateway.FindByID(ctx, id)
-	if err != nil {
-
-	}
-
-	return u, nil
+	return uc.userGateway.FindByID(ctx, id)
 }
 
-func (uc *UseCase) FriendRequest() {
-
+func (uc *UseCase) Subscribe(ctx context.Context, userID, friendID int64) (int64, error) {
+	return uc.userGateway.AddFriend(ctx, userID, friendID)
 }
 
-func (uc *UseCase) AnswerFriendRequest() {
-
+func (uc *UseCase) Unsubscribe(ctx context.Context, userID, friendID int64) (int64, error) {
+	return uc.userGateway.DeleteFriend(ctx, userID, friendID)
 }
 
 func (uc *UseCase) CreateUser(ctx context.Context, user *domain.User) (int64, error) {
-	id, err := uc.userGateway.Create(ctx, user)
+	hash, err := bcrypt.GenerateFromPassword([]byte(user.Password), bcrypt.DefaultCost)
 	if err != nil {
-		uc.logger.Error("create user failed", zap.Error(err))
-
-		return 0, err
+		return 0, fmt.Errorf("hash password: %w", err)
 	}
+	user.Password = string(hash)
 
-	return id, nil
+	return uc.userGateway.Create(ctx, user)
 }
 
-func (uc *UseCase) Filter(ctx context.Context, user *domain.User) (int64, error) {
-	return 0, nil
-	//id, err := uc.userGateway.Create(ctx, user)
-	//if err != nil {
-	//	uc.logger.Error("create user failed", zap.Error(err))
-	//
-	//	return 0, err
-	//}
-	//
-	//return id, nil
+func (uc *UseCase) FindAll(ctx context.Context) ([]*domain.User, error) {
+	return uc.userGateway.FindAll(ctx)
 }
 
-func (uc *UseCase) FindAfterID(ctx context.Context, id int64) ([]*domain.User, error) {
-	users, err := uc.userGateway.FindAfterID(ctx, id, 10)
-	if err != nil {
-		uc.logger.Error("FindAfterID failed", zap.Error(err))
-
-		return nil, err
-	}
-
-	return users, nil
+func (uc *UseCase) FindFriends(ctx context.Context, userID int64) ([]*domain.User, error) {
+	return uc.userGateway.FindFriends(ctx, userID)
 }

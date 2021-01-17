@@ -179,6 +179,7 @@ github.com/sirupsen/logrus v1.7.0 h1:ShrD1U9pZB12TX0cVy0DtePoCH97K8EtX+mg7ZARUtM
 github.com/sirupsen/logrus v1.7.0/go.mod h1:yWOB1SBYBC5VeMP7gHvWumXLIWorT60ONWic61uBYv0=
 github.com/sterligov/otus_highload v0.0.0-20210107181851-0d032f5b25cb h1:47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
 github.com/sterligov/otus_highload v0.0.0-20210107181851-0d032f5b25cb/go.mod h1:qGr7Lg5CQKPeVx/bq6KFK91zGJv0/WIf/ROzJk/9aI0=
+github.com/sterligov/otus_highload v0.0.0-20210113044913-7f14a2db8f98 h1:6SrSiFl/omdCD2KQGTAiJc+aj3MT+RlZX64sc3KvV3I=
 github.com/sterligov/otus_homework v0.0.0-20201222180025-eea48af9c6f2 h1:6arQLEV6AEE8V3AXtgLpxNmRwtVrLqUOKASe872vM70=
 github.com/sterligov/otus_homework/hw12_13_14_15_calendar v0.0.0-20201222180025-eea48af9c6f2 h1:mGBCMuQMbMmkBGfT+xa/aTOkQVYxO7YYmUiy3jTlXZ0=
 github.com/sterligov/otus_homework/hw12_13_14_15_calendar v0.0.0-20201222180025-eea48af9c6f2/go.mod h1:IMRRFjCLvB+t7Kn0qvFlcvBbZm8llvXFumUdDlc72l4=

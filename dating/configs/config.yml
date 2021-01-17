@@ -3,13 +3,13 @@ logger:
   path: stderr
 
 http:
-  addr: localhost:8081
+  addr: localhost:8082
   write_timeout: 5s
   read_timeout: 5s
   handler_timeout: 5s
 
 jwt:
-  secret_key: "secret_key"
+  secret_key: secret_key
 
 database:
   connection_addr: dating_user:dating_pass@tcp(localhost:3313)/dating?parseTime=true

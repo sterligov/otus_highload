@@ -1,6 +1,9 @@
 package v1
 
-type loginRequest struct {
-	Email    string `json:"email"`
-	Password string `json:"password"`
+type Inserted struct {
+	InsertedID int64 `json:"inserted_id"`
+}
+
+type Affected struct {
+	Affected int64 `json:"affected"`
 }

@@ -10,6 +10,8 @@ import (
 	"os/signal"
 	"syscall"
 
+	"github.com/sterligov/otus_highload/dating/internal/logger"
+
 	"go.uber.org/zap"
 
 	"github.com/sterligov/otus_highload/dating/internal/config"
@@ -38,6 +40,11 @@ func main() {
 
 	cfg, err := config.New(configFile)
 	if err != nil {
+		rerr = err
+		return
+	}
+
+	if err := logger.InitGlobal(cfg); err != nil {
 		rerr = err
 		return
 	}

@@ -20,21 +20,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="98f0d969-e480-4418-bead-8120cd888f85" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/build/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/dating" beforeDir="false" afterPath="$PROJECT_DIR$/bin/dating" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/wire.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/wire.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/wire_gen.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/wire_gen.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/.env" beforeDir="false" afterPath="$PROJECT_DIR$/deployments/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deployments/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/deployments/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/config/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/gateway/database.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/gateway/sql/database.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/server/http/handler.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/server/http/middleware.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/20210107220332_create_city_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/20210107220338_create_city_table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/20210107220338_create_country_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/20210107220332_create_country_table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/20210107220346_create_user_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/20210107220346_create_user_table.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/domain/errors.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/domain/errors.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/domain/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/domain/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/gateway/sql/city.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/gateway/sql/city.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/gateway/sql/mapper.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/gateway/sql/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/gateway/sql/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/logger/logger.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/logger/logger.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/server/http/handler/v1/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/server/http/handler/v1/handler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/server/http/handler/v1/models.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/server/http/handler/v1/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/server/http/handler/v1/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/server/http/middleware/jwt.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/server/http/middleware/jwt.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/usecase/auth/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/usecase/auth/auth.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/usecase/user/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/usecase/user/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/util/crypt/crypt.go" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +56,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaScript File" />
         <option value="Go File" />
       </list>
     </option>
@@ -68,16 +81,16 @@
     <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../banners-rotation" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/migrations" />
       <recent name="$PROJECT_DIR$/internal/server/http/handlers/v1" />
       <recent name="$PROJECT_DIR$/internal/util/crypt" />
       <recent name="$PROJECT_DIR$/internal/gateway/sql" />
       <recent name="$PROJECT_DIR$/internal/gateway" />
-      <recent name="$PROJECT_DIR$/cmd" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -114,33 +127,37 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="791" y="390" width="400" height="334" key="#Go_Modules/72.27.1848.1053@72.27.1848.1053" timestamp="1610039967691" />
-    <state x="591" y="215" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610222960305">
+    <state x="591" y="215" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610572807615">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="591" y="215" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1610222960305" />
-    <state x="709" y="355" width="564" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1610043980515">
+    <state x="591" y="215" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1610572807615" />
+    <state x="709" y="355" width="636" height="410" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1610916796443">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="709" y="355" width="564" height="403" key="#com.intellij.fileTypes.FileTypeChooser/72.27.1848.1053@72.27.1848.1053" timestamp="1610043980515" />
+    <state x="709" y="355" width="636" height="410" key="#com.intellij.fileTypes.FileTypeChooser/72.27.1848.1053@72.27.1848.1053" timestamp="1610916796443" />
     <state x="631" y="334" width="719" height="452" key="EditFileWatcherDialog" timestamp="1610039882502">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="631" y="334" width="719" height="452" key="EditFileWatcherDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1610039882502" />
-    <state x="779" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1610484127459">
+    <state x="779" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1610895905570">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="779" y="311" width="424" height="491" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1610484127459" />
-    <state x="485" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1610189917010">
+    <state x="779" y="311" width="424" height="491" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1610895905570" />
+    <state x="485" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1610573846309">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="485" y="188" width="1022" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1610189917010" />
-    <state x="687" y="292" width="618" height="580" key="find.popup" timestamp="1610272593458">
+    <state x="485" y="188" width="1022" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1610573846309" />
+    <state x="687" y="292" width="618" height="580" key="find.popup" timestamp="1610917717657">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="687" y="292" width="618" height="580" key="find.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1610272593458" />
-    <state x="659" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1610222205117">
+    <state x="687" y="292" width="618" height="580" key="find.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1610917717657" />
+    <state x="659" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1610827582996">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="659" y="259" width="672" height="678" key="search.everywhere.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1610222205117" />
+    <state x="659" y="259" width="672" height="678" key="search.everywhere.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1610827582996" />
+    <state x="721" y="456" width="540" height="201" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1610572750937">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="721" y="456" width="540" height="201" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1610572750937" />
   </component>
 </project>

@@ -2,11 +2,11 @@ package auth
 
 import (
 	"context"
-	"errors"
+	"fmt"
 
 	"github.com/sterligov/otus_highload/dating/internal/domain"
-	"github.com/sterligov/otus_highload/dating/internal/util/crypt"
 	"go.uber.org/zap"
+	"golang.org/x/crypto/bcrypt"
 )
 
 type UseCase struct {
@@ -22,30 +22,14 @@ func NewAuthUseCase(gateway domain.UserGateway) *UseCase {
 }
 
 func (uc *UseCase) Login(ctx context.Context, email, password string) (*domain.User, error) {
-	ep, err := crypt.Encrypt(password)
+	u, err := uc.userGateway.FindByEmail(ctx, email)
 	if err != nil {
-		uc.logger.Error("encrypt failed", zap.Error(err))
-
-		return nil, domain.ErrUnexpected
+		return nil, fmt.Errorf("FindByEmail: %w", err)
 	}
 
-	u, err := uc.userGateway.FindByEmailAndPassword(ctx, email, ep)
-	if err != nil && !errors.Is(err, domain.ErrNotFound) {
-		uc.logger.Error("find user by email and password failed", zap.Error(err))
-
-		return nil, domain.ErrUnexpected
+	if err := bcrypt.CompareHashAndPassword([]byte(u.Password), []byte(password)); err != nil {
+		return nil, fmt.Errorf("CompareHashAndPassword: %w", err)
 	}
 
-	return u, err
-}
-
-func (uc *UseCase) Register(ctx context.Context, user *domain.User) error {
-	_, err := uc.userGateway.Create(ctx, user)
-	if err != nil && !errors.Is(err, domain.ErrNotFound) {
-		uc.logger.Error("create user failed", zap.Error(err))
-
-		return domain.ErrUnexpected
-	}
-
-	return err
+	return u, nil
 }

@@ -34,7 +34,7 @@ type Config struct {
 	StorageType string `yaml:"storage_type"`
 
 	JWT struct {
-		SecretKey []byte `yaml:"secret_key"`
+		SecretKey string `yaml:"secret_key"`
 	}
 }
 
