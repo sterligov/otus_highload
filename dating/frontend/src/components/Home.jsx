@@ -1,6 +1,7 @@
 import React from "react";
 import {Redirect, withRouter} from "react-router-dom";
 import {authService} from "../authService";
+import Menu from "./Menu";
 
 class Home extends React.Component {
     render() {
@@ -9,7 +10,10 @@ class Home extends React.Component {
         }
 
         return (
-            <>Вы дома</>
+            <>
+                <Menu/>
+                <h2>Вы дома</h2>
+            </>
         );
     }
 }

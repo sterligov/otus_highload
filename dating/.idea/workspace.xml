@@ -20,33 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="98f0d969-e480-4418-bead-8120cd888f85" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/dating" beforeDir="false" afterPath="$PROJECT_DIR$/bin/dating" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/wire.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/wire.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/wire_gen.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/wire_gen.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Registration.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Registration.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/config/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/domain/errors.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/domain/errors.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/domain/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/domain/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/gateway/sql/city.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/gateway/sql/city.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/gateway/sql/mapper.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/gateway/sql/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/gateway/sql/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/logger/logger.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/logger/logger.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/server/http/handler/v1/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/server/http/handler/v1/handler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/server/http/handler/v1/models.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/server/http/handler/v1/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/server/http/handler/v1/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/server/http/middleware/jwt.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/server/http/middleware/jwt.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/usecase/auth/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/usecase/auth/auth.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/usecase/user/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/usecase/user/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/util/crypt/crypt.go" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,14 +68,15 @@
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/src" />
       <recent name="$PROJECT_DIR$/migrations" />
       <recent name="$PROJECT_DIR$/internal/server/http/handlers/v1" />
       <recent name="$PROJECT_DIR$/internal/util/crypt" />
       <recent name="$PROJECT_DIR$/internal/gateway/sql" />
-      <recent name="$PROJECT_DIR$/internal/gateway" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -147,10 +133,10 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="485" y="188" width="1022" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1610573846309" />
-    <state x="687" y="292" width="618" height="580" key="find.popup" timestamp="1610917717657">
+    <state x="687" y="292" width="618" height="580" key="find.popup" timestamp="1611008743036">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="687" y="292" width="618" height="580" key="find.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1610917717657" />
+    <state x="687" y="292" width="618" height="580" key="find.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1611008743036" />
     <state x="659" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1610827582996">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>

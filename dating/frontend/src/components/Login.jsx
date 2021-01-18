@@ -52,7 +52,7 @@ class Login extends React.Component {
         const user = this.state.user;
 
         return (
-            <div className="d-flex justify-content-center mt-5">
+            <>
                 <fieldset disabled={this.state.isFormDisabled} className="p-2">
                     <h2>Авторизация</h2>
                     <form id="login" className="form-group">
@@ -85,7 +85,7 @@ class Login extends React.Component {
                         </Link>
                     </form>
                 </fieldset>
-            </div>
+            </>
         );
     }
 }
