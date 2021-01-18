@@ -1,20 +1,15 @@
 import axios, {post} from 'axios';
 
-const role = {
-    admin: 'ROLE_ADMIN',
-    user: 'ROLE_USER'
-};
-
 export const authService = {
     login,
     logout,
     tokenHeader,
-    isLogged
+    isAuthorized
 };
 
-function login(username, password) {
-    return post('/v1/login', {
-        username: username,
+function login(email, password) {
+    return post('/v1/sign-in', {
+        email: email,
         password: password
     })
         .then(
@@ -32,7 +27,7 @@ function logout() {
     localStorage.removeItem("token");
 }
 
-function isLogged() {
+function isAuthorized() {
     return Boolean(localStorage.getItem("token"));
 }
 

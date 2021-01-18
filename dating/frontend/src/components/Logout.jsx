@@ -5,6 +5,6 @@ import {Redirect} from "react-router-dom";
 export default class Logout extends React.Component {
     render() {
         authService.logout();
-        return <Redirect to="/login"/>;
+        return <Redirect to="/sign-in"/>;
     }
 }

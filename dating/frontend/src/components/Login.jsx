@@ -1,5 +1,5 @@
 import React from "react";
-import {Redirect, withRouter} from "react-router-dom";
+import {Link, Redirect, withRouter} from "react-router-dom";
 import {authService} from "../authService";
 
 class Login extends React.Component {
@@ -9,12 +9,13 @@ class Login extends React.Component {
             isFormDisabled: false,
             error: null,
             user: {
-                username: "",
+                email: "",
                 password: ""
             }
         };
-        this.handleSubmit = this.handleSubmit.bind(this);
+
         this.handleChange = this.handleChange.bind(this);
+        this.handleSignIn = this.handleSignIn.bind(this);
     }
 
     handleChange(e) {
@@ -24,7 +25,7 @@ class Login extends React.Component {
         this.setState({user: user, error: null});
     }
 
-    handleSubmit(e) {
+    handleSignIn(e) {
         e.preventDefault();
 
         this.setState({
@@ -32,7 +33,7 @@ class Login extends React.Component {
             error: null,
         });
 
-        authService.login(this.state.user.username, this.state.user.password)
+        authService.login(this.state.user.email, this.state.user.password)
             .then(
                 () => {
                     this.setState({isFormDisabled: false});
@@ -44,25 +45,25 @@ class Login extends React.Component {
     }
 
     render() {
-        if (authService.isLogged()) {
+        if (authService.isAuthorized()) {
             return <Redirect to="/"/>;
         }
 
         const user = this.state.user;
 
         return (
-            <div>
-                <h2>Авторизация</h2>
-                <fieldset disabled={this.state.isFormDisabled}>
-                    <form id="login" className="form-group w-25">
-                        <label htmlFor="username">Имя пользователя</label>
+            <div className="d-flex justify-content-center mt-5">
+                <fieldset disabled={this.state.isFormDisabled} className="p-2">
+                    <h2>Авторизация</h2>
+                    <form id="login" className="form-group">
+                        <label htmlFor="email">Email</label>
                         <input type="text"
                                className="form-control"
-                               name="username"
-                               value={user.username}
+                               name="email"
+                               value={user.email}
                                onChange={this.handleChange}/>
 
-                        <label htmlFor="username" className="mt-2">Пароль</label>
+                        <label htmlFor="password" className="mt-2">Пароль</label>
                         <input type="password"
                                className="form-control"
                                name="password"
@@ -76,7 +77,12 @@ class Login extends React.Component {
                         <input className="btn-info btn mt-2"
                                type="submit"
                                value="Войти"
-                               onClick={this.handleSubmit}/>
+                               onClick={this.handleSignIn}/>
+                        <Link to={`/sign-up`} className="font-weight-bold">
+                            <button className="btn-info btn mt-2 ml-3">
+                                Регистрация
+                            </button>
+                        </Link>
                     </form>
                 </fieldset>
             </div>
