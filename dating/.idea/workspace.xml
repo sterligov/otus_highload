@@ -21,17 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="98f0d969-e480-4418-bead-8120cd888f85" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/dating" beforeDir="false" afterPath="$PROJECT_DIR$/bin/dating" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Login.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/Registration.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Registration.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/server/http/handler/v1/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/server/http/handler/v1/handler.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,10 +126,10 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="485" y="188" width="1022" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1610573846309" />
-    <state x="687" y="292" width="618" height="580" key="find.popup" timestamp="1611008743036">
+    <state x="687" y="292" width="618" height="580" key="find.popup" timestamp="1611077309632">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="687" y="292" width="618" height="580" key="find.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1611008743036" />
+    <state x="687" y="292" width="618" height="580" key="find.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1611077309632" />
     <state x="659" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1610827582996">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
