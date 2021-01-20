@@ -6,10 +6,9 @@ export const axiosConfig = {
 };
 
 function register() {
-    // axios.defaults.baseURL = process.env.REACT_APP_API_ENDPOINT;
-    axios.defaults.baseURL = 'http://localhost:8082';
-    axios.defaults.headers.common["Content-Type"] = "application/ld+json; charset=utf-8";
-    axios.defaults.headers.common["Accept"] = "application/ld+json";
+    // axios.defaults.baseURL = 'http://dating-api:8082';
+    axios.defaults.headers.common["Content-Type"] = "application/json; charset=utf-8";
+    axios.defaults.headers.common["Accept"] = "application/json";
 
     if (authService.tokenHeader()) {
         axios.defaults.headers.common['Authorization'] = authService.tokenHeader();

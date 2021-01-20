@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import {Switch, withRouter} from "react-router-dom";
+import {Redirect, Switch, withRouter} from "react-router-dom";
 import Menu from "./Menu";
 import {authService} from "../authService";
 
@@ -77,9 +77,9 @@ class Profile extends React.Component {
     }
 
     fetchData() {
-        let url = `v1/profile`;
+        let url = `/v1/profile`;
         if (this.props.match.params.id) {
-            url = `v1/users/${this.props.match.params.id}`;
+            url = `/v1/users/${this.props.match.params.id}`;
         }
 
         axios.get(url)

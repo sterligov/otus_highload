@@ -19,7 +19,7 @@ RUN CGO_ENABLED=0 go build \
 
 FROM alpine:3.9
 
-ENV BIN_FILE "/opt/calendar/dating-app"
+ENV BIN_FILE "/opt/dating/dating-app"
 COPY --from=build ${BIN_FILE} ${BIN_FILE}
 
 ENV CONFIG_FILE /etc/calendar/config.yml
