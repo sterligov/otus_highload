@@ -16,7 +16,7 @@ class Profile extends React.Component {
 
     subscribeHandler(e) {
         let user = {...this.state.user};
-        let url = `v1/friends/${e.target.dataset.user}`;
+        let url = `/v1/friends/${e.target.dataset.user}`;
 
         if (e.target.dataset.friend == 1) {
             axios.delete(url)

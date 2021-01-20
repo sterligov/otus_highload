@@ -38,7 +38,7 @@ class Registration extends React.Component {
         this.form.onformsubmit = (fields) => {
             this.setState({isFormDisabled: true})
 
-            axios.post("v1/sign-up", fields)
+            axios.post("/v1/sign-up", fields)
                 .then(
                     () => {
                         if (this._isMounted) {
@@ -66,7 +66,7 @@ class Registration extends React.Component {
         this._isMounted = true;
         document.title = "Регистрация";
 
-        axios.get("v1/cities", {cancelToken: this.cancelSource.token})
+        axios.get("/v1/cities", {cancelToken: this.cancelSource.token})
             .then(
                 result => {
                     if (this._isMounted) {

@@ -19,7 +19,7 @@ class FriendsList extends React.Component {
     unsubscribe(e) {
         let users = [...this.state.users];
 
-        axios.delete(`v1/friends/${e.target.dataset.user}`)
+        axios.delete(`/v1/friends/${e.target.dataset.user}`)
             .then(
                 () => {
                     if (this._isMounted) {
@@ -42,7 +42,7 @@ class FriendsList extends React.Component {
         this._isMounted = true;
         document.title = "Друзья";
 
-        axios.get("v1/friends", {cancelToken: this.cancelSource.token})
+        axios.get("/v1/friends", {cancelToken: this.cancelSource.token})
             .then(
                 result => {
                     if (this._isMounted) {

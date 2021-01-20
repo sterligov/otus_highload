@@ -18,7 +18,7 @@ class UserList extends React.Component {
 
     subscribeHandler(e) {
         let friends = {...this.state.friends};
-        let url = `v1/friends/${e.target.dataset.user}`;
+        let url = `/v1/friends/${e.target.dataset.user}`;
 
         if (e.target.dataset.friend == 1) {
             delete friends[e.target.dataset.user];
@@ -62,7 +62,7 @@ class UserList extends React.Component {
         this._isMounted = true;
         document.title = "Список пользователей";
 
-        axios.get("v1/friends", {cancelToken: this.cancelSource.token})
+        axios.get("/v1/friends", {cancelToken: this.cancelSource.token})
             .then(
                 result => {
                     if (this._isMounted) {
@@ -81,7 +81,7 @@ class UserList extends React.Component {
                 }
             );
 
-        axios.get("v1/users", {cancelToken: this.cancelSource.token})
+        axios.get("/v1/users", {cancelToken: this.cancelSource.token})
             .then(
                 result => {
                     if (this._isMounted) {
