@@ -23,15 +23,16 @@ const (
 
 type (
 	User struct {
-		ID        int64     `db:"id"`
-		FirstName string    `db:"first_name"`
-		LastName  string    `db:"last_name"`
-		Password  string    `db:"password"`
-		Birthday  time.Time `db:"birthday"`
-		Email     string    `db:"email"`
-		Interests string    `db:"interests"`
-		Sex       string    `db:"sex"`
-		CityID    int64     `db:"city_id"`
+		ID        int64         `db:"id"`
+		FirstName string        `db:"first_name"`
+		LastName  string        `db:"last_name"`
+		Password  string        `db:"password"`
+		Birthday  time.Time     `db:"birthday"`
+		Email     string        `db:"email"`
+		Interests string        `db:"interests"`
+		Sex       string        `db:"sex"`
+		CityID    int64         `db:"city_id"`
+		IsFriend  sql.NullInt32 `db:"is_friend"`
 		City      `db:"city"`
 	}
 )
@@ -48,11 +49,17 @@ func NewUserGateway(db *sqlx.DB) *UserGateway {
 	}
 }
 
-func (ug *UserGateway) FindByID(ctx context.Context, id int64) (*domain.User, error) {
+func (ug *UserGateway) FindByID(ctx context.Context, curUserID, id int64) (*domain.User, error) {
 	const query = `
 SELECT u.*,
        с.id "city.id",
-	   с.name "city.name"
+	   с.name "city.name",
+       (
+       	SELECT 1
+    	FROM friends
+       	WHERE user_id = ? AND friend_id = ? 
+       	OR friend_id = ? AND user_id = ?
+       ) is_friend
 FROM user u
 JOIN city с ON с.id = u.city_id
 WHERE u.id = ?`
@@ -60,8 +67,15 @@ WHERE u.id = ?`
 	u := new(User)
 
 	err := ug.db.
-		QueryRowxContext(ctx, query, id).
-		StructScan(u)
+		QueryRowxContext(
+			ctx,
+			query,
+			curUserID,
+			id,
+			curUserID,
+			id,
+			id,
+		).StructScan(u)
 	if err != nil {
 		if err == sql.ErrNoRows {
 			return nil, domain.ErrNotFound
@@ -241,22 +255,23 @@ VALUES (?, ?)`
 }
 
 func (ug *UserGateway) DeleteFriend(ctx context.Context, userID, friendID int64) (int64, error) {
+	zap.L().Error("ff", zap.Int64("user", userID), zap.Int64("friend", friendID))
 	const query = `
 DELETE FROM friends
 WHERE user_id = :user_id AND friend_id = :friend_id 
-	OR friend_id = :friend_id AND user_id = :user_id`
+	OR friend_id = :user_id AND user_id = :friend_id`
 
 	res, err := ug.db.NamedExecContext(ctx, query, map[string]interface{}{
 		"user_id":   userID,
 		"friend_id": friendID,
 	})
 	if err != nil {
-		return 0, fmt.Errorf("unsubscribe exec context: %w", err)
+		return 0, fmt.Errorf("delete friend exec context: %w", err)
 	}
 
 	affected, err := res.RowsAffected()
 	if err != nil {
-		return 0, fmt.Errorf("unsubscribe affected: %w", err)
+		return 0, fmt.Errorf("delete friend affected: %w", err)
 	}
 
 	return affected, nil
@@ -272,6 +287,7 @@ func toDomainUser(u *User) *domain.User {
 		Email:     u.Email,
 		Interests: u.Interests,
 		Sex:       u.Sex,
+		IsFriend:  int(u.IsFriend.Int32),
 		City: &domain.City{
 			ID:   u.CityID,
 			Name: u.City.Name,

@@ -39,7 +39,10 @@ class Login extends React.Component {
                     this.setState({isFormDisabled: false});
                 },
                 err => {
-                    this.setState({isFormDisabled: false, error: err});
+                    this.setState({
+                        isFormDisabled: false,
+                        error: err.response.data.message
+                    });
                 }
             )
     }
@@ -52,7 +55,7 @@ class Login extends React.Component {
         const user = this.state.user;
 
         return (
-            <>
+            <div className="d-flex justify-content-center">
                 <fieldset disabled={this.state.isFormDisabled} className="p-2">
                     <h2>Авторизация</h2>
                     <form id="login" className="form-group">
@@ -70,6 +73,10 @@ class Login extends React.Component {
                                value={user.password}
                                onChange={this.handleChange}/>
 
+                        <label className="error d-block text-danger">
+                            {this.state.error ? this.state.error : ""}
+                        </label>
+
                         {/*{this.state.error &&*/}
                         {/*<ValidationError error={"Неверный логин или пароль"}/>*/}
                         {/*}*/}
@@ -85,7 +92,7 @@ class Login extends React.Component {
                         </Link>
                     </form>
                 </fieldset>
-            </>
+            </div>
         );
     }
 }

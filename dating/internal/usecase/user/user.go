@@ -24,8 +24,8 @@ func NewUserUseCase(gateway domain.UserGateway) *UseCase {
 	}
 }
 
-func (uc *UseCase) FindByID(ctx context.Context, id int64) (*domain.User, error) {
-	return uc.userGateway.FindByID(ctx, id)
+func (uc *UseCase) FindByID(ctx context.Context, curUserID, id int64) (*domain.User, error) {
+	return uc.userGateway.FindByID(ctx, curUserID, id)
 }
 
 func (uc *UseCase) Subscribe(ctx context.Context, userID, friendID int64) (int64, error) {

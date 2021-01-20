@@ -35,44 +35,31 @@ class Registration extends React.Component {
             email: "required|email",
         });
 
-        this.handleSubmit = this.handleSubmit.bind(this);
-
         this.form.onformsubmit = (fields) => {
-            console.log(fields);
+            this.setState({isFormDisabled: true})
+
+            axios.post("v1/sign-up", fields)
+                .then(
+                    () => {
+                        if (this._isMounted) {
+                            alert('Вы успешно зарегистрированы');
+                            this.props.history.push('/sign-in');
+                            this.setState({isFormDisabled: false});
+                        }
+                    },
+                    () => {
+                        if (this._isMounted) {
+                            this.setState({
+                                isFormDisabled: false,
+                                errors: {
+                                    common: "Произошла ошибка, возможно этот email уже занят"
+                                }
+                            });
+                        }
+                    }
+                );
         }
     }
-
-    handleSubmit(e) {
-        this.form.
-        e.preventDefault();
-
-        this.setState({errors: {}});
-        const user = {...this.state.user};
-        console.log(user);
-
-        axios.post("v1/sign-up", user)
-            .then(
-                () => {
-                    if (this._isMounted) {
-                        this.setState({isFormDisabled: false});
-                    }
-                },
-                () => {
-                    if (this._isMounted) {
-                        this.setState({
-                            isFormDisabled: false,
-                        });
-                    }
-                }
-            );
-    }
-
-    // handleChange(e) {
-    //     let user = {...this.state.user};
-    //     const inputName = e.target.getAttribute("name");
-    //     fields[inputName] = e.target.value;
-    //     this.setState({user: user, error: null});
-    // }
 
     componentDidMount() {
         this.cancelSource = axios.CancelToken.source();
@@ -96,13 +83,6 @@ class Registration extends React.Component {
                         });
                     }
                 },
-                err => {
-                    if (this._isMounted) {
-                        this.setState({
-                            cities: [],
-                        });
-                    }
-                }
             );
     }
 
@@ -113,7 +93,7 @@ class Registration extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="d-flex justify-content-center">
                 <fieldset disabled={this.state.isFormDisabled}>
                     <form name="article" className="form-group" style={{width: "300px"}}
                           onSubmit={this.form.handleSubmit}>
@@ -200,6 +180,10 @@ class Registration extends React.Component {
                                value={this.state.fields["interests"]}/>
                         <label className="error d-block text-danger">
                             {this.state.errors["interests"] ? this.state.errors["interests"] : ""}
+                        </label>
+
+                        <label className="error d-block text-danger">
+                            {this.state.errors["common"] ? this.state.errors["common"] : ""}
                         </label>
 
                         <button className="btn btn-info mt-2" type="submit">

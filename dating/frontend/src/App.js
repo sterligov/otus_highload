@@ -5,7 +5,7 @@ import Router from "./components/Router";
 
 function App() {
   return (
-    <div className="d-flex justify-content-center mt-5">
+    <div className="App">
         <Router/>
     </div>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import {Redirect, withRouter} from "react-router-dom";
+import {Redirect, Route, Switch, withRouter} from "react-router-dom";
 import {authService} from "../authService";
 import Menu from "./Menu";
 
@@ -10,10 +10,9 @@ class Home extends React.Component {
         }
 
         return (
-            <>
+            <div className="w-50">
                 <Menu/>
-                <h2>Вы дома</h2>
-            </>
+            </div>
         );
     }
 }

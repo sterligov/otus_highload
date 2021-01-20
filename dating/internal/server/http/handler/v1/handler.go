@@ -30,8 +30,10 @@ func NewHandler(
 		v.Use(jm.MiddlewareFunc())
 		{
 			v.GET("/users", uh.FindAll)
+			v.GET("/profile", uh.Profile)
+			v.GET("/friends", uh.Friends)
 			v.GET("/users/:id", uh.FindByID)
-			v.GET("/users/:id/friends", uh.FindFriends)
+			v.GET("/users/:id/friends", uh.FriendsByUserID)
 			v.POST("/friends/:friend_id", uh.Subscribe)
 			v.DELETE("/friends/:friend_id", uh.Unsubscribe)
 		}

@@ -15,11 +15,12 @@ type (
 		Password  string
 		Interests string
 		Sex       string
+		IsFriend  int
 		City      *City
 	}
 
 	UserGateway interface {
-		FindByID(ctx context.Context, id int64) (*User, error)
+		FindByID(ctx context.Context, curUserID, id int64) (*User, error)
 		FindByEmail(ctx context.Context, email string) (*User, error)
 		FindAll(ctx context.Context) ([]*User, error)
 		FindFriends(ctx context.Context, userID int64) ([]*User, error)

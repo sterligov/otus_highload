@@ -7,6 +7,8 @@ import {Route, Switch} from "react-router-dom";
 import Profile from "./Profile";
 import UserList from "./UserList";
 import Registration from "./Registration";
+import Menu from "./Menu";
+import FriendsList from "./FriendsList";
 
 export default class Router extends React.Component {
     render() {
@@ -22,15 +24,22 @@ export default class Router extends React.Component {
                     <Route exact path="/sign-up">
                         <Registration/>
                     </Route>
+
                     <Route exact path="/">
-                        <Home/>
-                    </Route>
-                    <Route exact path="/users/:id">
                         <Profile/>
+                    </Route>
+                    <Route exact path="/profile/:id">
+                        <Profile/>
+                    </Route>
+                    <Route exact path="/friends">
+                        <FriendsList/>
                     </Route>
                     <Route exact path="/users">
                         <UserList/>
                     </Route>
+                    {/*<Route exact path="/users">*/}
+                    {/*    <Friends/>*/}
+                    {/*</Route>*/}
                     <Route >
                         <Error error={{status: 404}}/>
                     </Route>

@@ -24,6 +24,7 @@ type (
 		Birthday  string `json:"birthday"`
 		Interests string `json:"interests"`
 		Sex       string `json:"sex"`
+		IsFriend  int    `json:"is_friend"`
 	}
 
 	UserRequest struct {
@@ -51,6 +52,46 @@ func NewUserHandler(uc *user.UseCase) *UserHandler {
 	}
 }
 
+func (uh *UserHandler) Profile(c *gin.Context) {
+	curUser, err := middleware.GetUserFromClaims(c)
+	if err != nil {
+		uh.logger.Warn("get user from claims failed", zap.Error(err))
+
+		handler.JSONError(c, handler.ErrBadParam)
+		return
+	}
+
+	u, err := uh.userUseCase.FindByID(c, curUser.ID, curUser.ID)
+	if err != nil {
+		uh.logger.Error("FindByID failed", zap.Error(err))
+
+		handler.JSONError(c, err)
+		return
+	}
+
+	c.JSON(http.StatusOK, ToUserResponse(u))
+}
+
+func (uh *UserHandler) Friends(c *gin.Context) {
+	curUser, err := middleware.GetUserFromClaims(c)
+	if err != nil {
+		uh.logger.Warn("get user from claims failed", zap.Error(err))
+
+		handler.JSONError(c, handler.ErrBadParam)
+		return
+	}
+
+	users, err := uh.userUseCase.FindFriends(c, curUser.ID)
+	if err != nil {
+		uh.logger.Error("subscribe failed", zap.Error(err))
+
+		handler.JSONError(c, err)
+		return
+	}
+
+	c.JSON(http.StatusOK, ToUsersResponse(users))
+}
+
 func (uh *UserHandler) FindAll(c *gin.Context) {
 	users, err := uh.userUseCase.FindAll(c)
 	if err != nil {
@@ -64,6 +105,14 @@ func (uh *UserHandler) FindAll(c *gin.Context) {
 }
 
 func (uh *UserHandler) FindByID(c *gin.Context) {
+	curUser, err := middleware.GetUserFromClaims(c)
+	if err != nil {
+		uh.logger.Warn("get user from claims failed", zap.Error(err))
+
+		handler.JSONError(c, handler.ErrBadParam)
+		return
+	}
+
 	id, err := strconv.ParseInt(c.Param("id"), 10, 64)
 	if err != nil {
 		uh.logger.Error("strconv failed", zap.Error(err))
@@ -72,7 +121,7 @@ func (uh *UserHandler) FindByID(c *gin.Context) {
 		return
 	}
 
-	u, err := uh.userUseCase.FindByID(c, id)
+	u, err := uh.userUseCase.FindByID(c, curUser.ID, id)
 	if err != nil {
 		uh.logger.Error("FindByID failed", zap.Error(err))
 
@@ -139,7 +188,7 @@ func (uh *UserHandler) Unsubscribe(c *gin.Context) {
 	c.JSON(http.StatusOK, Affected{Affected: affected})
 }
 
-func (uh *UserHandler) FindFriends(c *gin.Context) {
+func (uh *UserHandler) FriendsByUserID(c *gin.Context) {
 	id, err := strconv.ParseInt(c.Param("id"), 10, 64)
 	if err != nil {
 		uh.logger.Error("strconv failed", zap.Error(err))
@@ -220,6 +269,7 @@ func ToUserResponse(u *domain.User) *UserResponse {
 			LastName:  u.LastName,
 			Birthday:  u.Birthday.Format(dateLayout),
 			Sex:       u.Sex,
+			IsFriend:  u.IsFriend,
 		},
 		City: &City{
 			ID:   u.City.ID,
