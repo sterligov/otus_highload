@@ -1,6 +1,6 @@
 FROM node:12-alpine as builder
 
-WORKDIR /msu
+WORKDIR /dating
 
 COPY *.json ./
 RUN npm install
