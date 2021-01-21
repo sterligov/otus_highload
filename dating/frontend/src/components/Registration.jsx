@@ -18,7 +18,7 @@ class Registration extends React.Component {
                 sex: "M",
                 interests: "",
                 birthday: "",
-                city_id: 1,
+                city_id: "",
             }
         };
 
@@ -43,8 +43,8 @@ class Registration extends React.Component {
                     () => {
                         if (this._isMounted) {
                             alert('Вы успешно зарегистрированы');
-                            this.props.history.push('/sign-in');
                             this.setState({isFormDisabled: false});
+                            this.props.history.push('/sign-in');
                         }
                     },
                     () => {
@@ -70,7 +70,17 @@ class Registration extends React.Component {
             .then(
                 result => {
                     if (this._isMounted) {
+
+                        if (result.data.length > 0) {
+                            let fields = {...this.state.fields};
+                            fields["city_id"] = result.data[0].id.toString();
+                            this.setState({
+                                fields: fields,
+                            });
+                        }
+
                         let cities = [];
+
                         for (let i = 0; i < result.data.length; i++) {
                             const city = result.data[i];
                             cities.push({
@@ -159,7 +169,7 @@ class Registration extends React.Component {
                                 onChange={this.form.handleChangeEvent}
                                 value={this.state.fields["city_id"]}>
                             {this.state.cities.map(c => {
-                                return <option value={c.id}>{c.value}</option>;
+                                return <option key={`city_${c.id}`} value={c.id}>{c.value}</option>;
                             })}
                         </select>
 

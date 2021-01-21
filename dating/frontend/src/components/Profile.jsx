@@ -95,6 +95,10 @@ class Profile extends React.Component {
     }
 
     render() {
+        if (!authService.isAuthorized()) {
+            return <Redirect to="/sign-in"/>;
+        }
+
         const user = this.state.user;
         const sex = {
             "M": "Мужской",

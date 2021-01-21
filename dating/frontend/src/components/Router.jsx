@@ -8,7 +8,6 @@ import Profile from "./Profile";
 import UserList from "./UserList";
 import Registration from "./Registration";
 import FriendsList from "./FriendsList";
-import {authService} from "../authService";
 
 export default class Router extends React.Component {
     render() {
@@ -24,7 +23,6 @@ export default class Router extends React.Component {
                     <Route exact path="/sign-up">
                         <Registration/>
                     </Route>
-                    {!authService.isAuthorized() && <Login/>}
                     <Route exact path="/">
                         <Profile/>
                     </Route>

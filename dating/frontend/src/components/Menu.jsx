@@ -1,8 +1,13 @@
 import React from "react";
-import {Link, withRouter} from "react-router-dom";
+import {Link, Redirect, withRouter} from "react-router-dom";
+import {authService} from "../authService";
 
 class Menu extends React.Component {
     render() {
+        if (!authService.isAuthorized()) {
+            return <Redirect to="/sign-in"/>;
+        }
+
         return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light mb-2">
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">

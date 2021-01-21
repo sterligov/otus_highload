@@ -28,7 +28,7 @@ type (
 	}
 
 	UserRequest struct {
-		CityID   int64  `json:"city_id"`
+		CityID   string  `json:"city_id"`
 		Password string `json:"password"`
 		User
 	}
@@ -226,6 +226,13 @@ func (uh *UserHandler) Create(c *gin.Context) {
 		return
 	}
 
+	cityID, err := strconv.ParseInt(request.CityID, 10, 64)
+	if err != nil {
+		uh.logger.Error("parse int", zap.Error(err))
+
+		handler.JSONError(c, handler.ErrBadParam)
+		return
+	}
 	insertedID, err := uh.userUseCase.CreateUser(c, &domain.User{
 		Email:     request.Email,
 		Password:  request.Password,
@@ -235,7 +242,7 @@ func (uh *UserHandler) Create(c *gin.Context) {
 		Birthday:  birthday,
 		Sex:       request.Sex,
 		City: &domain.City{
-			ID: request.CityID,
+			ID: cityID,
 		},
 	})
 
