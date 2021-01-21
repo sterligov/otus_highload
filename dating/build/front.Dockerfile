@@ -3,7 +3,7 @@ FROM node:14-alpine as builder
 WORKDIR /dating
 
 COPY *.json ./
-RUN npm install
+RUN npm install --ignore-scripts
 COPY ./ ${WORKDIR}
 RUN npm run build
 
