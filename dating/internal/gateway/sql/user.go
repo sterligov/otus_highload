@@ -112,6 +112,42 @@ WHERE email = ?`
 	return toDomainUser(u), nil
 }
 
+func (ug *UserGateway) FindByFirstNameAndLastName(
+	ctx context.Context,
+	firstName, lastName string,
+) ([]*domain.User, error) {
+	const query = `
+SELECT *
+FROM user
+WHERE first_name LIKE ? AND last_name LIKE ?`
+
+	var users []*domain.User
+
+	rows, err := ug.db.QueryxContext(ctx, query, firstName+"%", lastName+"%")
+	if err != nil {
+		return nil, fmt.Errorf("user find by first and last name query: %w", err)
+	}
+	defer func() {
+		if err := rows.Close(); err != nil {
+			ug.logger.Warn("rows close failed", zap.Error(err))
+		}
+	}()
+
+	for rows.Next() {
+		u := new(User)
+		if err := rows.StructScan(&u); err != nil {
+			return nil, fmt.Errorf("user struct scan: %w", err)
+		}
+		users = append(users, toDomainUser(u))
+	}
+
+	if rows.Err() != nil {
+		return nil, fmt.Errorf("user rows: %w", rows.Err())
+	}
+
+	return users, nil
+}
+
 func (ug *UserGateway) FindAll(ctx context.Context) ([]*domain.User, error) {
 	const query = `
 SELECT u.*,
@@ -255,7 +291,6 @@ VALUES (?, ?)`
 }
 
 func (ug *UserGateway) DeleteFriend(ctx context.Context, userID, friendID int64) (int64, error) {
-	zap.L().Error("ff", zap.Int64("user", userID), zap.Int64("friend", friendID))
 	const query = `
 DELETE FROM friends
 WHERE user_id = :user_id AND friend_id = :friend_id 

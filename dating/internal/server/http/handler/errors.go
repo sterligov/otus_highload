@@ -20,7 +20,7 @@ func JSONError(c *gin.Context, err error) {
 	switch {
 	case errors.Is(err, domain.ErrNotFound):
 		status = http.StatusNotFound
-	case errors.Is(err, ErrBadClaims):
+	case errors.Is(err, ErrBadClaims) || errors.Is(err, domain.ErrEmptyParam):
 		status = http.StatusBadRequest
 	default:
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "internal server error"})

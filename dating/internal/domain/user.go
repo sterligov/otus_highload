@@ -27,5 +27,6 @@ type (
 		Create(ctx context.Context, u *User) (int64, error)
 		AddFriend(ctx context.Context, userID, friendID int64) (int64, error)
 		DeleteFriend(ctx context.Context, userID, friendID int64) (int64, error)
+		FindByFirstNameAndLastName(ctx context.Context, firstName, lastName string) ([]*User, error)
 	}
 )

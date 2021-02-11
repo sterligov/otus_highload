@@ -1,12 +1,10 @@
 package v1
 
 import (
+	"github.com/sterligov/otus_highload/dating/internal/server/http/middleware"
 	"net/http"
 
-	"github.com/sterligov/otus_highload/dating/internal/server/http/middleware"
-
 	jwt "github.com/appleboy/gin-jwt/v2"
-
 	"github.com/gin-gonic/gin"
 )
 
@@ -30,6 +28,7 @@ func NewHandler(
 		v.Use(jm.MiddlewareFunc())
 		{
 			v.GET("/users", uh.FindAll)
+			v.GET("/filter", uh.FindByFirstNameAndLastName)
 			v.GET("/profile", uh.Profile)
 			v.GET("/friends", uh.Friends)
 			v.GET("/users/:id", uh.FindByID)
@@ -41,3 +40,5 @@ func NewHandler(
 
 	return r
 }
+
+

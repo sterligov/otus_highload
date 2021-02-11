@@ -1,6 +1,7 @@
 package v1
 
 import (
+	"fmt"
 	"net/http"
 	"strconv"
 	"time"
@@ -96,6 +97,25 @@ func (uh *UserHandler) FindAll(c *gin.Context) {
 	users, err := uh.userUseCase.FindAll(c)
 	if err != nil {
 		uh.logger.Error("user find all failed", zap.Error(err))
+
+		handler.JSONError(c, err)
+		return
+	}
+
+	c.JSON(http.StatusOK, ToUsersResponse(users))
+}
+
+func (uh *UserHandler) FindByFirstNameAndLastName(c *gin.Context) {
+	lastName := c.Query("last_name")
+	if lastName == "" {
+		handler.JSONError(c, fmt.Errorf("last_name: %w", domain.ErrEmptyParam))
+		return
+	}
+	firstName := c.Query("first_name")
+
+	users, err := uh.userUseCase.FindByFirstNameAndLastName(c, firstName, lastName)
+	if err != nil {
+		uh.logger.Error("user find all by first and last name failed", zap.Error(err))
 
 		handler.JSONError(c, err)
 		return

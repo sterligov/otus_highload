@@ -5,15 +5,12 @@ import (
 	"fmt"
 
 	"golang.org/x/crypto/bcrypt"
-
 	"go.uber.org/zap"
-
 	"github.com/sterligov/otus_highload/dating/internal/domain"
 )
 
 type UseCase struct {
 	userGateway domain.UserGateway
-	//friendGateway domain.Fri
 	logger *zap.Logger
 }
 
@@ -52,4 +49,8 @@ func (uc *UseCase) FindAll(ctx context.Context) ([]*domain.User, error) {
 
 func (uc *UseCase) FindFriends(ctx context.Context, userID int64) ([]*domain.User, error) {
 	return uc.userGateway.FindFriends(ctx, userID)
+}
+
+func (uc *UseCase) FindByFirstNameAndLastName(ctx context.Context, firstName, lastName string) ([]*domain.User, error) {
+	return uc.userGateway.FindByFirstNameAndLastName(ctx, firstName, lastName)
 }

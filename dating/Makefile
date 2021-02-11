@@ -40,7 +40,7 @@ mocks:
 	mockery --all --dir internal --output ./internal/mocks --case underscore
 
 docker-up:
-	cd deployments && docker-compose up -d --build
+	cd deployments && docker-compose up -d --build --remove-orphans
 
 docker-stop:
 	cd deployments && docker-compose stop

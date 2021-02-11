@@ -15,16 +15,16 @@ services:
     ports:
       - ${DB_PORT}:3306
 
-  dating-front:
-    build:
-      context: ../frontend
-      dockerfile: ../build/front.Dockerfile
-    ports:
-      - 8008:80
+#  dating-front:
+#    build:
+#      context: ../frontend
+#      dockerfile: ../build/front.Dockerfile
+#    ports:
+#      - 8008:80
 
-  dating-api:
-    build:
-      context: ../
-      dockerfile: ./build/Dockerfile
-    ports:
-      - 8082:8082
+#  dating-api:
+#    build:
+#      context: ../
+#      dockerfile: ./build/Dockerfile
+#    ports:
+#      - 8082:8082
