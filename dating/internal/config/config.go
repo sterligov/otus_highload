@@ -22,10 +22,11 @@ type Config struct {
 	} `yaml:"grpc"`
 
 	Database struct {
-		Addr   string `yaml:"connection_addr"`
-		Driver string `yaml:"driver"`
-		MaxOpenConns int `yaml:"max_open_conns"`
-		MaxIdleConns int `yaml:"max_idle_conns"`
+		Addr            string        `yaml:"connection_addr"`
+		Driver          string        `yaml:"driver"`
+		MaxOpenConns    int           `yaml:"max_open_conns"`
+		MaxIdleConns    int           `yaml:"max_idle_conns"`
+		MaxConnLifetime time.Duration `yaml:"max_conn_lifetime"`
 	} `yaml:"database"`
 
 	Logger struct {

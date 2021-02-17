@@ -21,6 +21,7 @@ func NewDatabase(cfg *config.Config) (*sqlx.DB, error) {
 
 	db.SetMaxOpenConns(cfg.Database.MaxOpenConns)
 	db.SetMaxIdleConns(cfg.Database.MaxIdleConns)
+	db.SetConnMaxLifetime(cfg.Database.MaxConnLifetime)
 
 	return db, nil
 }
