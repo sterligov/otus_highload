@@ -24,6 +24,8 @@ type Config struct {
 	Database struct {
 		Addr   string `yaml:"connection_addr"`
 		Driver string `yaml:"driver"`
+		MaxOpenConns int `yaml:"max_open_conns"`
+		MaxIdleConns int `yaml:"max_idle_conns"`
 	} `yaml:"database"`
 
 	Logger struct {

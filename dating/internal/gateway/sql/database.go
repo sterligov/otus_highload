@@ -19,5 +19,8 @@ func NewDatabase(cfg *config.Config) (*sqlx.DB, error) {
 		return nil, fmt.Errorf("database connection failed: %w", err)
 	}
 
+	db.SetMaxOpenConns(cfg.Database.MaxOpenConns)
+	db.SetMaxIdleConns(cfg.Database.MaxIdleConns)
+
 	return db, nil
 }
